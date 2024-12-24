@@ -349,7 +349,7 @@ const moveDoneToBottom = async function (editor: vscode.TextEditor, params: { mi
   let doneEntries: [number, number][] = [];
   headers.forEach((header, n) => {
     const startLine = header.map?.[0];
-    if (!startLine) {
+    if (startLine === undefined || startLine === null) {
       return;
     }
     let endLine;
